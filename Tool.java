@@ -1,9 +1,8 @@
 public class Tool extends TeachingMaterial{
-    private String name;
     private String description;
 
     public String toString(){
-        return super.toString() + ", name: " + name + ", description: " + description;
+        return super.toString() + ", description: " + description;
     }
 
     public Tool(String name, boolean onShoppingList, boolean required, boolean provided, String notes, String description){
@@ -16,14 +15,6 @@ public class Tool extends TeachingMaterial{
         
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
     public String getDescription(){
         return description;
     }
@@ -31,5 +22,5 @@ public class Tool extends TeachingMaterial{
     public void setDescription(String description){
         this.description = description;
     }
-    
+
 }

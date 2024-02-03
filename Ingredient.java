@@ -1,10 +1,9 @@
 public class Ingredient extends TeachingMaterial{
-    private String name;
     private double amount;
     private String unit;
 
     public String toString(){
-        return super.toString() + ", name: " + name + ", amount: " + amount + ", unit: " + unit;
+        return super.toString() + ", amount: " + amount + ", unit: " + unit;
     }
 
     public Ingredient(String name, boolean onShoppingList, boolean required, boolean provided, String notes, double amount, String unit){
@@ -16,14 +15,6 @@ public class Ingredient extends TeachingMaterial{
 
     public Ingredient(){
         
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
     }
 
     public double getAmount(){
@@ -41,5 +32,5 @@ public class Ingredient extends TeachingMaterial{
     public void setUnit(String unit){
         this.unit = unit;
     }
-    
+
 }

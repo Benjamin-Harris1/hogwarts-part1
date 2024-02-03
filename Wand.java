@@ -8,14 +8,14 @@ public class Wand extends TeachingMaterial {
     }
 
     public Wand(String name, boolean onShoppingList, boolean required, boolean provided, String notes, double lengthInInches, String wood, String core){
-        super(name, onShoppingList, required, provided, required, notes);
+        super(name, onShoppingList, required, provided, notes);
         this.lengthInInches = lengthInInches;
         this.wood = wood;
         this.core = core;
     }
 
     public Wand(){
-        
+
     }
 
     public double getLengthInInches(){
