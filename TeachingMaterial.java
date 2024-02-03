@@ -9,7 +9,7 @@ public abstract class TeachingMaterial{
         return name + ", on shopping list: " + onShoppingList + ", required: " + required + ", provided: " + provided + ", notes: " + notes;
     }
 
-    public TeachingMaterial(String name, boolean onShoppingList, boolean required, boolean, provided, String notes){
+    public TeachingMaterial(String name, boolean onShoppingList, boolean required, boolean provided, String notes){
         this.name = name;
         this.onShoppingList = onShoppingList;
         this.required = required;

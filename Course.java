@@ -1,17 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Course {
     private Subject subject;
     private Teacher teacher;
     private DynamicArray students;
-    //private TeachingMaterial[] materials;
+    private List<TeachingMaterial> teachingMaterials;
 
     public String toString(){
-        return subject + ", teacher: " + teacher + ", students: " + students;
+        return subject + ", teacher: " + teacher + ", students: " + students + ", materials: " + teachingMaterials;
     }
 
     public Course(Subject subject, Teacher teacher){
         this.subject = subject;
         this.teacher = teacher;
         this.students = new DynamicArray();
+        this.teachingMaterials = new ArrayList<>();
+    }
+
+    public void addTeachingMaterial(TeachingMaterial teachingMaterial){
+        this.teachingMaterials.add(teachingMaterial);
+    }
+
+    public void removeTeachingMaterial(TeachingMaterial teachingMaterial){
+        this.teachingMaterials.remove(teachingMaterial);
     }
 
     public boolean addStudent(Student student){
@@ -40,5 +52,9 @@ public class Course {
 
     public DynamicArray getStudents(){
         return students;
+    }
+
+    public List<TeachingMaterial> getTeachingMaterials(){
+        return teachingMaterials;
     }
 }

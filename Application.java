@@ -73,8 +73,24 @@ public class Application {
         //System.out.println(potionsSixthYear);
 
 
+        TeachingMaterial textbook = new TextBook("Potions Textbook", false, true, true, "Advanced Potion Making", "Libatius Borage", "Self-Publish", "Magic Books", 1977);
+        TeachingMaterial wand = new Wand("Wooden Wand", true, true, false, "Oak", 11, "Holly", "Phoenix feather");
 
+        potionsSixthYear.addTeachingMaterial(textbook);
+        potionsSixthYear.addTeachingMaterial(wand);
 
+        System.out.println("Course: " + potionsSixthYear.getSubject().getName());
+        System.out.println("Teacher: " + potionsSixthYear.getTeacher().getFullName());
+        System.out.println("Students:");
+        for (int i = 0; i < potionsSixthYear.getStudents().size(); i++){
+            HogwartsStudent student = (HogwartsStudent) potionsSixthYear.getStudents().get(i);
+            System.out.println("- " + student.getFullName() +  " from " + student.getHouse().getName());
+        }
+
+        System.out.println("Teaching materials:");
+        for (TeachingMaterial teachingMaterial : potionsSixthYear.getTeachingMaterials()){
+            System.out.println("- " + teachingMaterial.getName());
+        }
 
         
     }
