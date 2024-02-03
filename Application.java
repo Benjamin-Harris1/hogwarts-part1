@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Application {
     public static void main(String[] args){
         initApp();
@@ -37,6 +39,18 @@ public class Application {
         }
         System.out.println("Antal studerende: " + students.size());
         System.out.println("Array størrelse: " + students.getCapacity());
+
+        DynamicArray teachers = new DynamicArray();
+
+        teachers.add(new HogwartsTeacher("Horace E. Slughorn", "Full-time", new Date(), null, slytherin, true));
+        teachers.add(new HogwartsTeacher("Severus Snape", "Full-time", new Date(), null, slytherin, true));
+
+        for (int i = 0; i < teachers.size(); i++){
+            HogwartsTeacher teacher = (HogwartsTeacher) teachers.get(i);
+            System.out.println(teacher.getFullName());
+        }
+
+
         
     }
 }
