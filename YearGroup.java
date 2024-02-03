@@ -31,10 +31,6 @@ public class YearGroup{
         this.students.add(student);
     }
 
-    public void removeStudent(HogwartsStudent student){
-        this.students.remove(student);
-    }
-
     public int getNumberOfStudents(){
         return this.students.size();
     }

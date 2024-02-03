@@ -1,5 +1,6 @@
 import java.util.Date;
 
+
 public class Application {
     public static void main(String[] args){
         initApp();
@@ -40,6 +41,21 @@ public class Application {
         }
         System.out.println("Antal studerende: " + students.size());
         System.out.println("Array størrelse: " + students.getCapacity());
+
+        // Test yearGroup
+
+        YearGroup yearGroup1991 = new YearGroup(1991, new Date());
+        yearGroup1991.addStudent((HogwartsStudent) students.get(0));
+        yearGroup1991.addStudent((HogwartsStudent) students.get(1));
+        yearGroup1991.addStudent((HogwartsStudent) students.get(2));
+
+        System.out.println("Year Group: " + yearGroup1991.getSchoolYear());
+        System.out.println("Start of school year: " + yearGroup1991.getBeginningOfSchoolYear());
+        System.out.println("Number of students: " + yearGroup1991.getNumberOfStudents());
+        for (int i = 0; i < yearGroup1991.getNumberOfStudents(); i++){
+            HogwartsStudent student = yearGroup1991.getStudent(i);
+            System.out.println("- " + student.getFullName() + " from " + student.getHouse().getName());
+        }
 
         DynamicArray teachers = new DynamicArray();
 
