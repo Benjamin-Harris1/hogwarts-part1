@@ -4,11 +4,18 @@ public class HogwartsStudent extends Student implements HogwartsPerson{
     private String[] teams;
 
     public String toString(){
-        return "HogwartsStudent{" + super.toString() + "house=" + house + ", prefect=" + prefect + String.join(", ", teams) + "}";
+        return super.toString() + house + ", prefect=" + prefect + ", teams=" + String.join(", ", teams) + "}";
     }
 
     public HogwartsStudent(String firstName, String middleName, String lastName, int enrollmentYear, int graduationYear, boolean graduated, House house, boolean prefect, String[] teams){
         super(firstName, middleName, lastName, enrollmentYear, graduationYear, graduated);
+        this.house = house;
+        this.prefect = prefect;
+        this.teams = teams;
+    }
+
+    public HogwartsStudent(String fullName, int enrollmentYear, int graduationYear, boolean graduated, House house, boolean prefect, String[] teams){
+        super(fullName, enrollmentYear, graduationYear, graduated);
         this.house = house;
         this.prefect = prefect;
         this.teams = teams;

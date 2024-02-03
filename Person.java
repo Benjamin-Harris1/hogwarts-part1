@@ -18,7 +18,11 @@ public class Person {
     }
 
     public String toString(){
-        return firstName + " " + lastName;
+        if (middleName != null) {
+            return firstName + " " + middleName + " " + lastName;
+        } else {
+            return firstName + " " + lastName;
+        }
     }
 
     public String getFirstName(){
