@@ -91,9 +91,13 @@ public class Application {
 
         TeachingMaterial textbook = new TextBook("Potions Textbook", false, true, true, "Advanced Potion Making", "Libatius Borage", "Self-Publish", "Magic Books", 1977);
         TeachingMaterial wand = new Wand("Wooden Wand", true, true, false, "Oak", 11, "Holly", "Phoenix feather");
+        TeachingMaterial tool = new Tool("Cauldron", true, true, false, "Pewter", "Standard size 2");
+        TeachingMaterial ingredient = new Ingredient("Bubotuber pus", true, true, false, "Bubotuber", 5.5, "Random");
 
         potionsSixthYear.addTeachingMaterial(textbook);
         potionsSixthYear.addTeachingMaterial(wand);
+        potionsSixthYear.addTeachingMaterial(ingredient);
+        potionsSixthYear.addTeachingMaterial(tool);
 
         System.out.println("Course: " + potionsSixthYear.getSubject().getName());
         System.out.println("Teacher: " + potionsSixthYear.getTeacher().getFullName());

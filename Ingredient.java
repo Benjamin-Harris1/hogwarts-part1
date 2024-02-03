@@ -8,7 +8,6 @@ public class Ingredient extends TeachingMaterial{
 
     public Ingredient(String name, boolean onShoppingList, boolean required, boolean provided, String notes, double amount, String unit){
         super(name, onShoppingList, required, provided, notes);
-        this.name = name;
         this.amount = amount;
         this.unit = unit;
     }
