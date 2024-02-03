@@ -32,7 +32,8 @@ public class Application {
 
 
         for (int i = 0; i < students.size(); i++){
-            students.get(i);
+            HogwartsStudent student = (HogwartsStudent) students.get(i);
+            System.out.println(student.getFullName() + " from " + student.getHouse().getName() + " which has the colors " + String.join(" and ", student.getHouse().getColors()));
         }
         System.out.println("Antal studerende: " + students.size());
         System.out.println("Array størrelse: " + students.getCapacity());

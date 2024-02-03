@@ -55,7 +55,7 @@ public class DynamicArray{
 
     public Person get(int index){
         if (index >= 0 && index < size) {
-            System.out.println("Indeks " + index + ": "+ array[index]);
+            //System.out.println("Indeks " + index + ": "+ array[index]);
             return array[index];
         } else {
             System.out.println("Ugyldigt indeks: " + index);
