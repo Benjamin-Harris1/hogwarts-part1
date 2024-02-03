@@ -36,6 +36,7 @@ public class Application {
         for (int i = 0; i < students.size(); i++){
             HogwartsStudent student = (HogwartsStudent) students.get(i);
             System.out.println(student.getFullName() + " from " + student.getHouse().getName() + " which has the colors " + String.join(" and ", student.getHouse().getColors()));
+            //System.out.println(student);
         }
         System.out.println("Antal studerende: " + students.size());
         System.out.println("Array størrelse: " + students.getCapacity());
@@ -47,8 +48,32 @@ public class Application {
 
         for (int i = 0; i < teachers.size(); i++){
             HogwartsTeacher teacher = (HogwartsTeacher) teachers.get(i);
-            System.out.println(teacher.getFullName());
+            System.out.println(teacher.getFullName() + ", employment type: " + teacher.getEmployment());
+            //System.out.println(teacher);
         }
+
+        // Opretter potions fag
+        Subject potions = new Subject("Potions", 6, false);
+
+        // Opretter potions kursus med Horace Slughorn som teacher
+        HogwartsTeacher slughorn = (HogwartsTeacher) teachers.get(0);
+        Course potionsSixthYear = new Course(potions, slughorn);
+
+        // Tilføj students til course
+        for (int i = 0; i < students.size(); i++){
+            HogwartsStudent student = (HogwartsStudent) students.get(i);
+            potionsSixthYear.addStudent(student);
+        }
+
+        for (int i = 0; i < potionsSixthYear.getStudents().size(); i++){
+            HogwartsStudent student = (HogwartsStudent) potionsSixthYear.getStudents().get(i);
+            System.out.println("Potions 6 student: " + student.getFullName() + " from " + student.getHouse().getName());
+        }
+
+        //System.out.println(potionsSixthYear);
+
+
+
 
 
         
