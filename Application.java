@@ -10,24 +10,26 @@ public class Application {
 
         DynamicArray students = new DynamicArray();
         
+        // Opret instanser af house
         House gryffindor = new House("Gryffindor", "Godric Gryffindor", new String[]{"red", "gold"});
         House ravenclaw = new House("Ravenclaw", "Rowena Ravenclaw", new String[]{"blue", "silver"});
         House slytherin = new House("Slytherin", "Salazar Slytherin", new String[]{"green", "silver"});
         House hufflepuff = new House("Hufflepuff", "Helga Hufflepuff", new String[]{"yellow", "black"});
 
+        // Tilføj students til dynamic array
         students.add(new HogwartsStudent("Harry Potter", 1991, 1997, false, gryffindor, true, new String[]{"Quidditch"}));
         students.add(new HogwartsStudent("Ron Weasley", 1991, 1997, false, gryffindor, false, new String[]{"Quidditch"}));
         students.add(new HogwartsStudent("Hermione Granger", 1991, 1997, false, gryffindor, false, new String[]{}));
         students.add(new HogwartsStudent("Draco Malfoy", 1991, 1997, false, slytherin, false, new String[]{"Quidditch"}));
         students.add(new HogwartsStudent("Neville Longbottom", 1991, 1997, false, gryffindor, false, new String[]{}));
         students.add(new HogwartsStudent("Luna Lovegood", 1991, 1997, false, ravenclaw, false, new String[]{}));
-        students.add(new HogwartsStudent("Ginny Weasley", 1992, 1998, false, gryffindor, false, new String[]{"Quidditch"})); // Yngre, men for variation
-        students.add(new HogwartsStudent("Cedric Diggory", 1989, 1995, false, hufflepuff, true, new String[]{"Quidditch"})); // Ældre, men vigtig karakter
+        students.add(new HogwartsStudent("Ginny Weasley", 1992, 1998, false, gryffindor, false, new String[]{"Quidditch"})); 
+        students.add(new HogwartsStudent("Cedric Diggory", 1989, 1995, false, hufflepuff, true, new String[]{"Quidditch"})); 
         students.add(new HogwartsStudent("Cho Chang", 1990, 1996, false, ravenclaw, false, new String[]{"Quidditch"}));
         students.add(new HogwartsStudent("Pansy Parkinson", 1991, 1997, false, slytherin, false, new String[]{}));
         students.add(new HogwartsStudent("Seamus Finnigan", 1991, 1997, false, gryffindor, false, new String[]{}));
         students.add(new HogwartsStudent("Dean Thomas", 1991, 1997, false, gryffindor, false, new String[]{}));
-        students.add(new HogwartsStudent("Padma Patil", 1991, 1997, false, ravenclaw, false, new String[]{})); // Tvilling til Parvati, men i Ravenclaw
+        students.add(new HogwartsStudent("Padma Patil", 1991, 1997, false, ravenclaw, false, new String[]{}));
         students.add(new HogwartsStudent("Parvati Patil", 1991, 1997, false, gryffindor, false, new String[]{}));
         students.add(new HogwartsStudent("Lavender Brown", 1991, 1997, false, gryffindor, false, new String[]{}));
         students.add(new HogwartsStudent("Gregory Goyle", 1991, 1997, false, slytherin, false, new String[]{}));
@@ -43,7 +45,6 @@ public class Application {
         System.out.println("Array størrelse: " + students.getCapacity());
 
         // Test yearGroup
-
         YearGroup yearGroup1991 = new YearGroup(1991, new Date());
         yearGroup1991.addStudent((HogwartsStudent) students.get(0));
         yearGroup1991.addStudent((HogwartsStudent) students.get(1));
@@ -57,11 +58,16 @@ public class Application {
             System.out.println("- " + student.getFullName() + " from " + student.getHouse().getName());
         }
 
+        // Opret dynamic array til teachers
         DynamicArray teachers = new DynamicArray();
 
+        // tilføj teachers til array
         teachers.add(new HogwartsTeacher("Horace E. Slughorn", "Full-time", new Date(), null, slytherin, true));
         teachers.add(new HogwartsTeacher("Severus Snape", "Full-time", new Date(), null, slytherin, true));
 
+        System.out.println("Teachers:");
+
+        // print teachers
         for (int i = 0; i < teachers.size(); i++){
             HogwartsTeacher teacher = (HogwartsTeacher) teachers.get(i);
             System.out.println(teacher.getFullName() + ", employment type: " + teacher.getEmployment());
@@ -88,17 +94,21 @@ public class Application {
 
         //System.out.println(potionsSixthYear);
 
+        // Opretter forskellige teaching materials
+        TextBook potionmaking = new TextBook("Advanced Potion-Making", false, true, false, "Course-book", "Advanced Potion-Making", "Libatius Borage", "Merge Books", 1946);
+        Tool cauldron = new Tool("Cauldron", true, true, true, "Steel", "A standard potion-making cauldron");
+        Tool silverKnife = new Tool("Silver Knife", true, true, false, "Silver", "A knife for cutting ingredients");
+        Ingredient ingredient1 = new Ingredient("Boomslang Skin", false, true, true, "Boomslang", 0.5, "ounces");
+        Ingredient ingredient2 = new Ingredient("Bicorn Horn", true, false, true, "Bicorn", 0.2, "ounces");
 
-        TeachingMaterial textbook = new TextBook("Potions Textbook", false, true, true, "Advanced Potion Making", "Libatius Borage", "Self-Publish", "Magic Books", 1977);
-        TeachingMaterial wand = new Wand("Wooden Wand", true, true, false, "Oak", 11, "Holly", "Phoenix feather");
-        TeachingMaterial tool = new Tool("Cauldron", true, true, false, "Pewter", "Standard size 2");
-        TeachingMaterial ingredient = new Ingredient("Bubotuber pus", true, true, false, "Bubotuber", 5.5, "Random");
+        // Tilføjer teaching materials til potion 6 course
+        potionsSixthYear.addTeachingMaterial(potionmaking);
+        potionsSixthYear.addTeachingMaterial(cauldron);
+        potionsSixthYear.addTeachingMaterial(silverKnife);
+        potionsSixthYear.addTeachingMaterial(ingredient1);
+        potionsSixthYear.addTeachingMaterial(ingredient2);
 
-        potionsSixthYear.addTeachingMaterial(textbook);
-        potionsSixthYear.addTeachingMaterial(wand);
-        potionsSixthYear.addTeachingMaterial(ingredient);
-        potionsSixthYear.addTeachingMaterial(tool);
-
+        // Printer detaljer om course, tilknyttede teachers, students og teaching materials
         System.out.println("Course: " + potionsSixthYear.getSubject().getName());
         System.out.println("Teacher: " + potionsSixthYear.getTeacher().getFullName());
         System.out.println("Students:");

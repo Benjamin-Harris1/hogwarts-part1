@@ -30,7 +30,7 @@ public class Course {
         if (students.size() < 12) {
             students.add(student);
             return true;
-        }
+        } 
         return false;
     }
 
