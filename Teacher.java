@@ -1,24 +1,25 @@
 import java.util.Date;
+import java.time.LocalDate;
 
 public class Teacher extends Person {
-    private String employment;
-    private Date employmentStart;
-    private Date employmentEnd;
+    private EmpType employmentType;
+    private LocalDate employmentStart;
+    private LocalDate employmentEnd;
 
     public String toString(){
-        return super.toString() + ", employment: " + employment;
+        return super.toString() + ", employment type: " + employmentType;
     }
 
-    public Teacher(String firstName, String middleName, String lastName, String employment, Date employmentStart, Date employmentEnd){
+    public Teacher(String firstName, String middleName, String lastName, EmpType employmentType, LocalDate employmentStart, LocalDate employmentEnd){
         super(firstName, middleName, lastName);
-        this.employment = employment;
+        this.employmentType = employmentType;
         this.employmentStart = employmentStart;
         this.employmentEnd = employmentEnd;
     }
 
-    public Teacher(String fullName, String employment, Date employmentStart, Date employmentEnd){
+    public Teacher(String fullName, EmpType employmentType, LocalDate employmentStart, LocalDate employmentEnd){
         super(fullName);
-        this.employment = employment;
+        this.employmentType = employmentType;
         this.employmentStart = employmentStart;
         this.employmentEnd = employmentEnd;
     }
@@ -27,26 +28,26 @@ public class Teacher extends Person {
 
     }
 
-    public String getEmployment(){
-        return employment;
+    public EmpType getEmploymentType(){
+        return employmentType;
     }
 
-    public void setEmployment(String employment){
-        this.employment = employment;
+    public void setEmploymentType(EmpType employmentType){
+        this.employmentType = employmentType;
     }
 
-    public Date getEmploymentStart(){
+    public LocalDate getEmploymentStart(){
         return employmentStart;
     }
 
-    public void setEmploymentStart(Date employmentStart){
+    public void setEmploymentStart(LocalDate employmentStart){
         this.employmentStart = employmentStart;
     }
-    public Date getEmploymentEnd(){
+    public LocalDate getEmploymentEnd(){
         return employmentEnd;
     }
 
-    public void setEmploymentEnd(Date employmentEnd){
+    public void setEmploymentEnd(LocalDate employmentEnd){
         this.employmentEnd = employmentEnd;
     }
 }

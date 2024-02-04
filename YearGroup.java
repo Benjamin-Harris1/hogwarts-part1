@@ -1,11 +1,12 @@
 import java.util.Date;
+import java.time.LocalDate;
 
 public class YearGroup{
     private int schoolYear;
-    private Date beginningOfSchoolYear;
+    private LocalDate beginningOfSchoolYear;
     private DynamicArray students;
 
-    public YearGroup(int schoolYear, Date beginningOfSchoolYear){
+    public YearGroup(int schoolYear, LocalDate beginningOfSchoolYear){
         this.schoolYear = schoolYear;
         this.beginningOfSchoolYear = beginningOfSchoolYear;
         this.students = new DynamicArray();
@@ -19,11 +20,11 @@ public class YearGroup{
         this.schoolYear = schoolYear;
     }
 
-    public Date getBeginningOfSchoolYear(){
+    public LocalDate getBeginningOfSchoolYear(){
         return beginningOfSchoolYear;
     }
 
-    public void setBeginningOfSchoolYear(Date beginningOfSchoolYear){
+    public void setBeginningOfSchoolYear(LocalDate beginningOfSchoolYear){
         this.beginningOfSchoolYear = beginningOfSchoolYear;
     }
 

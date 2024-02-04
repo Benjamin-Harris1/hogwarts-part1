@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.time.LocalDate;
 
 public class HogwartsTeacher extends Teacher implements HogwartsPerson {
     private House house;
@@ -8,13 +9,13 @@ public class HogwartsTeacher extends Teacher implements HogwartsPerson {
         return super.toString() + ", " + house + " is head of house=" + headOfHouse;
     }
 
-    public HogwartsTeacher(String firstName, String middleName, String lastName, String employment, Date employmentStart, Date employmentEnd, House house, boolean headOfHouse) {
-        super(firstName, middleName, lastName, employment, employmentStart, employmentEnd);
+    public HogwartsTeacher(String firstName, String middleName, String lastName, EmpType employmentType, LocalDate employmentStart, LocalDate employmentEnd, House house, boolean headOfHouse) {
+        super(firstName, middleName, lastName, employmentType, employmentStart, employmentEnd);
         this.house = house;
         this.headOfHouse = headOfHouse;
     }
-    public HogwartsTeacher(String fullName, String employment, Date employmentStart, Date employmentEnd, House house, boolean headOfHouse) {
-        super(fullName, employment, employmentStart, employmentEnd);
+    public HogwartsTeacher(String fullName, EmpType employmentType, LocalDate employmentStart, LocalDate employmentEnd, House house, boolean headOfHouse) {
+        super(fullName, employmentType, employmentStart, employmentEnd);
         this.house = house;
         this.headOfHouse = headOfHouse;
     }
